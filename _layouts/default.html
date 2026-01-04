@@ -18,6 +18,10 @@
   <meta name="twitter:title" content="{{ page.title | default: site.title }}">
   <meta name="twitter:description" content="{{ page.description | default: site.description }}">
   {% if page.image %}<meta name="twitter:image" content="{{ page.image | absolute_url }}">{% endif %}
+  {% if page.layout == 'post' %}
+  <meta name="twitter:label1" content="Reading time">
+  <meta name="twitter:data1" content="{{ content | number_of_words | divided_by: 200 }} min read">
+  {% endif %}
 
   <style>
     :root {
