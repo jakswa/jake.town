@@ -6,11 +6,21 @@
   <title>Jake Swanson - Software Engineer</title>
   <style>
     :root {
-      --text: #1a1a1a;
-      --text-secondary: #555;
-      --accent: #2563eb;
-      --border: #e5e5e5;
+      --text: #111;
+      --text-secondary: #444;
+      --accent: #b45309;
+      --border: #ddd;
       --bg: #fff;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      :root {
+        --text: #e5e5e5;
+        --text-secondary: #a3a3a3;
+        --accent: #fbbf24;
+        --border: #404040;
+        --bg: #171717;
+      }
     }
 
     * {
@@ -31,11 +41,12 @@
 
     a {
       color: var(--accent);
-      text-decoration: none;
+      text-decoration: underline;
+      text-underline-offset: 2px;
     }
 
     a:hover {
-      text-decoration: underline;
+      text-decoration-thickness: 2px;
     }
 
     header {
@@ -132,26 +143,21 @@
       margin-bottom: 0.5rem;
     }
 
-    .skills-grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-    }
-
-    .skill-group h3 {
-      font-size: 0.9rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .skill-group ul {
-      list-style: none;
+    .skills-inline {
       color: var(--text-secondary);
       font-size: 0.95rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
     }
 
-    .skill-group li {
-      margin-bottom: 0.25rem;
+    .skills-inline strong {
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    .job-minimal {
+      margin-bottom: 1rem;
     }
 
     .project {
@@ -242,7 +248,7 @@
 <body>
   <header>
     <h1>Jake Swanson</h1>
-    <p class="tagline">Software engineer with 12+ years building web applications in Ruby on Rails and JavaScript/TypeScript</p>
+    <p class="tagline">Staff engineer. Real-time systems, phone calls, WebSockets. Mostly Rails and TypeScript.</p>
     <div class="contact-info">
       <span>Atlanta, GA</span>
       <span>(678) 719-9096</span>
@@ -268,16 +274,12 @@
       </ul>
     </div>
 
-    <div class="job">
+    <div class="job job-minimal">
       <div class="job-header">
         <span class="job-title">Staff Engineer</span>
         <span class="job-date">Oct 2022 - Dec 2024</span>
       </div>
       <div class="job-company">Grayscale Labs Inc. &mdash; Atlanta, GA</div>
-      <p class="tech-stack">Ruby on Rails, React, PostgreSQL, Redis, Sidekiq, Shoryuken</p>
-      <ul>
-        <li>Full-stack development in a monolith + medium-service architecture environment</li>
-      </ul>
     </div>
 
     <div class="job">
@@ -288,7 +290,7 @@
       <div class="job-company">CallRail &mdash; Atlanta, GA</div>
       <p class="tech-stack">Ruby on Rails, PostgreSQL, Redis, Sidekiq, JavaScript, AngularJS</p>
       <ul>
-        <li>Wrote and rewrote code orchestrating hundreds of thousands of phone calls daily, owning the myriad race conditions and concurrency edge cases that came with it</li>
+        <li>Owned the code routing hundreds of thousands of daily phone calls, including the race conditions and concurrency bugs that come with it</li>
         <li>Rewrote the 2,000-line ERB + JavaScript tracking library distributed to customers, converting it to pure JavaScript with a comprehensive test suite</li>
         <li>Leveraged the new test suite to remove jQuery from the tracking library, dramatically reducing bundle size</li>
         <li>Progressed from full-stack AngularJS + Rails work to backend-focused systems development</li>
@@ -298,42 +300,11 @@
 
   <section>
     <h2>Skills</h2>
-    <div class="skills-grid">
-      <div class="skill-group">
-        <h3>Primary Languages</h3>
-        <ul>
-          <li>Ruby</li>
-          <li>JavaScript / TypeScript</li>
-          <li>SQL (PostgreSQL)</li>
-          <li>HTML, CSS, DOM API</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h3>Frameworks & Tools</h3>
-        <ul>
-          <li>Ruby on Rails</li>
-          <li>Node.js</li>
-          <li>React</li>
-          <li>WebSockets</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h3>Infrastructure</h3>
-        <ul>
-          <li>PostgreSQL, Redis</li>
-          <li>Sidekiq, Shoryuken</li>
-          <li>Twilio</li>
-          <li>Git, GitHub</li>
-        </ul>
-      </div>
-      <div class="skill-group">
-        <h3>Side Languages</h3>
-        <ul>
-          <li>Rust</li>
-          <li>Elixir</li>
-        </ul>
-      </div>
-    </div>
+    <p class="skills-inline">
+      <span><strong>Languages:</strong> Ruby, JavaScript/TypeScript, SQL, HTML/CSS</span>
+      <span><strong>Frameworks:</strong> Rails, Node.js, React</span>
+      <span><strong>Infrastructure:</strong> PostgreSQL, Redis, Sidekiq, Twilio</span>
+    </p>
   </section>
 
   <section>
