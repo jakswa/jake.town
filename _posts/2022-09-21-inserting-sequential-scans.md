@@ -1,11 +1,8 @@
 ---
-title: INSERTing Sequential Scans
-date: Sep 21, 2022
-published: true
-description: Showing one way `pg_stats` can ruin your query performance with sequential scans.
-tags: postgresql, postgres, pg, database, heuristics
-# cover_image: https://direct_url_to_image.jpg
-# Use a ratio of 100:42 for best results.
+layout: post
+title: "INSERTing Sequential Scans"
+slug: inserting-sequential-scans
+description: "Showing one way pg_stats can ruin your query performance with sequential scans."
 ---
 
 Do you see "sequential scan" in your `EXPLAIN` output while hoping for index scans? This post dives into one reason why, and aims to be a quick tour, showing SQL you can run on your local `psql`.
@@ -17,8 +14,6 @@ We'll go about this in steps:
 2. Test out fast queries on data
 3. Create a slowdown
 4. See the `pg_stats`
-
-
 
 ## 1. The setup
 
@@ -37,16 +32,17 @@ insert into dogs_seen (num_seen) select (1/random())
 analyze dogs_seen;
 ```
 
-
 ## 2. Initial testing
 
 The test query we will focus on is this:
+
 ```sql
 select count(*) from dogs_seen where num_seen = 1;
 -- this should be around 300k-400k
 ```
 
 You expect that query to use the index we created during setup, and it should be:
+
 ```sql
 explain analyze select count(*) from dogs_seen where num_seen = 1;
 
@@ -65,7 +61,7 @@ explain analyze select count(*) from dogs_seen where num_seen = 1;
 (10 rows)
 ```
 
-Yup, it shows `Index` scanning. One thing to note here is that this query has pretty bad performance, relatively speaking. During setup, I mentioned that we generated `num_seen` values _weighted towards one_, so there are way more rows matching our condition than, say, this one:
+Yup, it shows `Index` scanning. One thing to note here is that this query has pretty bad performance, relatively speaking. During setup, I mentioned that we generated `num_seen` values *weighted towards one*, so there are way more rows matching our condition than, say, this one:
 
 ```sql
 explain analyze select count(*) from dogs_seen
@@ -85,7 +81,6 @@ I draw a comparison here as a hint to say: This query is about as bad as it can 
 
 What happens if we make things even worse on the planner? What if we made an even larger chunk of this table match our query?
 
-
 ## 3. Create a slowdown
 
 Again, we are going to create a slowdown purely by inserting more rows, but we want to make things worse on our planner, so we'll weight these rows differently:
@@ -100,6 +95,7 @@ analyze dogs_seen;
 ```
 
 And now explain that original 25ms SQL:
+
 ```sql
 explain analyze select count(*) from dogs_seen where num_seen = 1;
 
@@ -123,7 +119,6 @@ The same SQL changed to sequential scan! There is dialog in my head here that I 
 - If postgres thinks it needs to scan a lot of a table, it might skip index-scanning work and scan the table directly instead.
 
 But how does postgres decide the above?
-
 
 ## 4. The `pg_stats`
 
