@@ -2,6 +2,7 @@
 layout: post
 title: "Filling MARTA Realtime Gaps"
 slug: marta-realtime-gaps
+description: "Going from realtime to realtime-ish with MARTA's train API."
 ---
 
 *Going from realtime to realtime-ish.*

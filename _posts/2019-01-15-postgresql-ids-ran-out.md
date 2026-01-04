@@ -2,6 +2,7 @@
 layout: post
 title: "The Night the PostgreSQL IDs Ran Out"
 slug: postgresql-ids-ran-out
+description: "Your primary key column runs out of values and your database starts exploding. What now?"
 ---
 
 It's a story no one wants to encounter: Your primary key column runs out of values and your database starts exploding. Alarms go off as people start poking their heads into developer chat:

@@ -2,7 +2,11 @@
 layout: post
 title: "300 Days in: Engineering at CallRail"
 slug: 300-days-at-callrail
+description: "Where did those 300 days go, and what's been keeping me busy?"
+image: /assets/images/300_days_callrail_header.webp
 ---
+
+![](/assets/images/300_days_callrail_header.webp){: .hero-image}
 
 Watch out for busyness. It sneaks up on you. One minute, you're starting a new job and diving into some internally facing UI code. Next thing you know, you look in the developer chat room and other changes you made are being deployed—this time, for the call routing logic. It's the code that drives calls for thousands of customers. The difference in scope is like day and night, and it seems to have crept up on me overnight.
 
