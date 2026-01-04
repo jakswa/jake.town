@@ -1,0 +1,373 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jake Swanson - Software Engineer</title>
+  <style>
+    :root {
+      --text: #1a1a1a;
+      --text-secondary: #555;
+      --accent: #2563eb;
+      --border: #e5e5e5;
+      --bg: #fff;
+    }
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+      line-height: 1.6;
+      color: var(--text);
+      background: var(--bg);
+      max-width: 850px;
+      margin: 0 auto;
+      padding: 2rem 1.5rem;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    a:hover {
+      text-decoration: underline;
+    }
+
+    header {
+      margin-bottom: 2rem;
+      padding-bottom: 1.5rem;
+      border-bottom: 2px solid var(--border);
+    }
+
+    header h1 {
+      font-size: 2rem;
+      font-weight: 700;
+      margin-bottom: 0.25rem;
+    }
+
+    header .tagline {
+      font-size: 1.1rem;
+      color: var(--text-secondary);
+      margin-bottom: 1rem;
+    }
+
+    .contact-info {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem 1.5rem;
+      font-size: 0.9rem;
+    }
+
+    .contact-info span {
+      white-space: nowrap;
+    }
+
+    section {
+      margin-bottom: 2rem;
+    }
+
+    section h2 {
+      font-size: 0.85rem;
+      font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--accent);
+      margin-bottom: 1rem;
+      padding-bottom: 0.25rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .job {
+      margin-bottom: 1.5rem;
+    }
+
+    .job:last-child {
+      margin-bottom: 0;
+    }
+
+    .job-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      flex-wrap: wrap;
+      gap: 0.25rem 1rem;
+      margin-bottom: 0.25rem;
+    }
+
+    .job-title {
+      font-weight: 600;
+      font-size: 1.05rem;
+    }
+
+    .job-date {
+      font-size: 0.9rem;
+      color: var(--text-secondary);
+      white-space: nowrap;
+    }
+
+    .job-company {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+      margin-bottom: 0.5rem;
+    }
+
+    .job ul {
+      margin-left: 1.25rem;
+      color: var(--text-secondary);
+    }
+
+    .job li {
+      margin-bottom: 0.35rem;
+    }
+
+    .tech-stack {
+      font-size: 0.85rem;
+      color: var(--text-secondary);
+      font-style: italic;
+      margin-bottom: 0.5rem;
+    }
+
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+      gap: 1.5rem;
+    }
+
+    .skill-group h3 {
+      font-size: 0.9rem;
+      font-weight: 600;
+      margin-bottom: 0.5rem;
+    }
+
+    .skill-group ul {
+      list-style: none;
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .skill-group li {
+      margin-bottom: 0.25rem;
+    }
+
+    .project {
+      margin-bottom: 1rem;
+    }
+
+    .project-name {
+      font-weight: 600;
+    }
+
+    .project-desc {
+      color: var(--text-secondary);
+      font-size: 0.95rem;
+    }
+
+    .links-list {
+      list-style: none;
+      color: var(--text-secondary);
+    }
+
+    .links-list li {
+      margin-bottom: 0.35rem;
+    }
+
+    .education-entry {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 0.25rem 1rem;
+    }
+
+    .education-entry .school {
+      font-weight: 600;
+    }
+
+    .education-entry .degree {
+      color: var(--text-secondary);
+    }
+
+    .education-entry .years {
+      color: var(--text-secondary);
+      font-size: 0.9rem;
+    }
+
+    /* Print styles */
+    @media print {
+      body {
+        padding: 0;
+        font-size: 11pt;
+        max-width: none;
+      }
+
+      a {
+        color: var(--text);
+      }
+
+      header {
+        padding-bottom: 1rem;
+        margin-bottom: 1.5rem;
+      }
+
+      section {
+        margin-bottom: 1.25rem;
+      }
+
+      .job {
+        margin-bottom: 1rem;
+        page-break-inside: avoid;
+      }
+
+      section h2 {
+        margin-bottom: 0.75rem;
+      }
+    }
+
+    @media (max-width: 500px) {
+      .job-header {
+        flex-direction: column;
+      }
+
+      .contact-info {
+        flex-direction: column;
+        gap: 0.25rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1>Jake Swanson</h1>
+    <p class="tagline">Software engineer with 12+ years building web applications in Ruby on Rails and JavaScript/TypeScript</p>
+    <div class="contact-info">
+      <span>Atlanta, GA</span>
+      <span>(678) 719-9096</span>
+      <span><a href="mailto:jakswa@gmail.com">jakswa@gmail.com</a></span>
+      <span><a href="https://linkedin.com/in/jakswa/">linkedin.com/in/jakswa</a></span>
+      <span><a href="https://github.com/jakswa">github.com/jakswa</a></span>
+    </div>
+  </header>
+
+  <section>
+    <h2>Experience</h2>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Staff Engineer</span>
+        <span class="job-date">Dec 2024 - Present</span>
+      </div>
+      <div class="job-company">CallRail &mdash; Atlanta, GA</div>
+      <p class="tech-stack">Node.js, TypeScript, WebSockets, OpenAI Realtime API, Twilio, Ruby on Rails</p>
+      <ul>
+        <li>Building AI Voice Assist: integrating Twilio voice streams with OpenAI's Realtime API via WebSockets</li>
+        <li>Prior call routing experience helped navigate the concurrency and edge cases that come with real-time audio</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Staff Engineer</span>
+        <span class="job-date">Oct 2022 - Dec 2024</span>
+      </div>
+      <div class="job-company">Grayscale Labs Inc. &mdash; Atlanta, GA</div>
+      <p class="tech-stack">Ruby on Rails, React, PostgreSQL, Redis, Sidekiq, Shoryuken</p>
+      <ul>
+        <li>Full-stack development in a monolith + medium-service architecture environment</li>
+      </ul>
+    </div>
+
+    <div class="job">
+      <div class="job-header">
+        <span class="job-title">Staff Engineer</span>
+        <span class="job-date">Oct 2014 - Aug 2022</span>
+      </div>
+      <div class="job-company">CallRail &mdash; Atlanta, GA</div>
+      <p class="tech-stack">Ruby on Rails, PostgreSQL, Redis, Sidekiq, JavaScript, AngularJS</p>
+      <ul>
+        <li>Wrote and rewrote code orchestrating hundreds of thousands of phone calls daily, owning the myriad race conditions and concurrency edge cases that came with it</li>
+        <li>Rewrote the 2,000-line ERB + JavaScript tracking library distributed to customers, converting it to pure JavaScript with a comprehensive test suite</li>
+        <li>Leveraged the new test suite to remove jQuery from the tracking library, dramatically reducing bundle size</li>
+        <li>Progressed from full-stack AngularJS + Rails work to backend-focused systems development</li>
+      </ul>
+    </div>
+  </section>
+
+  <section>
+    <h2>Skills</h2>
+    <div class="skills-grid">
+      <div class="skill-group">
+        <h3>Primary Languages</h3>
+        <ul>
+          <li>Ruby</li>
+          <li>JavaScript / TypeScript</li>
+          <li>SQL (PostgreSQL)</li>
+          <li>HTML, CSS, DOM API</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Frameworks & Tools</h3>
+        <ul>
+          <li>Ruby on Rails</li>
+          <li>Node.js</li>
+          <li>React</li>
+          <li>WebSockets</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Infrastructure</h3>
+        <ul>
+          <li>PostgreSQL, Redis</li>
+          <li>Sidekiq, Shoryuken</li>
+          <li>Twilio</li>
+          <li>Git, GitHub</li>
+        </ul>
+      </div>
+      <div class="skill-group">
+        <h3>Side Languages</h3>
+        <ul>
+          <li>Rust</li>
+          <li>Elixir</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h2>Projects</h2>
+    <div class="project">
+      <span class="project-name"><a href="https://kincall.app">kincall.app</a></span>
+      <span class="project-desc"> &mdash; AI that calls your family and shares summaries. Built with Bun, Elysia, Twilio, OpenAI.</span>
+    </div>
+
+    <div class="project">
+      <span class="project-name"><a href="https://marta.io">marta.io</a></span>
+      <span class="project-desc"> &mdash; Real-time Atlanta train arrival dashboard built in Rust. <a href="https://github.com/jakswa/roundhouse">Source on GitHub</a>.</span>
+    </div>
+  </section>
+
+  <section>
+    <h2>Writing</h2>
+    <ul class="links-list">
+      <li><a href="https://medium.com/@jakswa/the-night-the-postgresql-ids-ran-out-9430a2dbb895">The Night the PostgreSQL IDs Ran Out</a></li>
+      <li><a href="https://medium.com/atlanta-ga/marta-realtime-gaps-15614c34dfa1">Filling MARTA Realtime Gaps</a></li>
+      <li><a href="https://medium.com/@jakswa/300-days-in-engineering-at-callrail-8c6708913a30">300 Days in: Engineering at CallRail</a></li>
+      <li><a href="https://fosstodon.org/@jakswa">fosstodon.org/@jakswa</a> &bull; <a href="https://medium.com/@jakswa">medium.com/@jakswa</a></li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Education</h2>
+    <div class="education-entry">
+      <div>
+        <span class="school">Georgia Southern University</span>
+        <span class="degree"> &mdash; B.S. in Computer Science</span>
+      </div>
+      <span class="years">2009 - 2011</span>
+    </div>
+  </section>
+</body>
+</html>
