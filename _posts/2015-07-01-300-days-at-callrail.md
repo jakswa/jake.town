@@ -41,7 +41,7 @@ You're a company receiving phone calls. Sometimes those calls come from other co
 
 You want to call a customer back but you don't want to use your personal phone. You want the customer to see your company's number as the caller ID because that's what they originally called. We have an outbound call UI that will help you make that happen. I added a check box that lets you record that outbound call if your account admin has enabled it.
 
-![Outbound recording feature](/assets/images/300_days_callrail_4.gif)
+![Outbound recording feature](/assets/images/300_days_callrail_4.webp)
 
 ## Day ??: Mario Kart
 
