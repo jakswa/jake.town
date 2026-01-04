@@ -1,0 +1,47 @@
+---
+layout: default
+title: Blog
+---
+<style>
+  .blog-header {
+    margin-bottom: 2rem;
+  }
+
+  .blog-header h1 {
+    font-size: 1.75rem;
+    margin-bottom: 0.25rem;
+  }
+
+  .post-list {
+    list-style: none;
+  }
+
+  .post-list li {
+    margin-bottom: 1.5rem;
+  }
+
+  .post-list a {
+    font-size: 1.15rem;
+    font-weight: 500;
+  }
+
+  .post-list .date {
+    display: block;
+    color: var(--text-secondary);
+    font-size: 0.9rem;
+    margin-top: 0.25rem;
+  }
+</style>
+
+<div class="blog-header">
+  <h1>Blog</h1>
+</div>
+
+<ul class="post-list">
+  {% for post in site.posts %}
+  <li>
+    <a href="{{ post.url }}">{{ post.title }}</a>
+    <span class="date">{{ post.date | date: "%B %d, %Y" }}</span>
+  </li>
+  {% endfor %}
+</ul>

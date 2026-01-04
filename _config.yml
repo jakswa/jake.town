@@ -1,0 +1,13 @@
+title: Jake Swanson
+description: Staff engineer. Real-time systems, phone calls, WebSockets.
+url: https://jake.town
+
+# Build settings
+markdown: kramdown
+permalink: /blog/:slug/
+
+# Exclude from build
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
