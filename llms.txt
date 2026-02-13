@@ -1,0 +1,36 @@
+# jake.town
+
+> Jake Swanson — Staff engineer. Backend systems, some frontend, lots of phone calls. Atlanta, GA.
+
+## About
+
+Jake is a staff-level software engineer based in Atlanta, GA. Career focus on backend systems, real-time infrastructure, and telecom integrations. Georgia Southern CS grad (2011). Over a decade of experience building systems that handle high concurrency — call routing, real-time APIs, AI voice pipelines.
+
+## Projects
+
+- [marta.io](https://marta.io): Real-time MARTA transit tracker. Maintained for 10+ years. Atlanta's public transit data, decoded and served.
+- [kincall.app](https://kincall.app): AI that calls your family and shares summaries. Built with Bun, Elysia, Twilio, OpenAI.
+- [home.jake.town](https://home.jake.town): Personal home server. Hosts experiments, tools, and an AI familiar named Clatis.
+- [Pullcord](https://pullcord.home.jake.town): Real-time MARTA bus tracker. Mobile-first, GTFS-RT, web push notifications. Open source at [codeberg.org/clatis/pullcord](https://codeberg.org/clatis/pullcord).
+
+## Writing
+
+- [The Night the PostgreSQL IDs Ran Out](https://jake.town/blog/postgresql-ids-ran-out/): What happens when your primary key sequence hits max int in production.
+- [INSERTing Sequential Scans](https://jake.town/blog/inserting-sequential-scans/): How INSERT statements can trigger sequential scans and what to do about it.
+- [Battling RecordNotUnique in Rails](https://jake.town/blog/battling-uniqueness/): Strategies for handling uniqueness constraint violations in Rails.
+- [Five Years of MARTA Coding](https://jake.town/blog/five-years-of-marta-coding/): The state of MARTA's open transit data — real-time train API, GTFS schedules, and the bus API. Lessons from building marta.io.
+- [Filling MARTA Realtime Gaps](https://jake.town/blog/marta-realtime-gaps/): Interpolating missing data points in MARTA's real-time feed.
+- [Your First DB Index, by Example](https://jake.town/blog/first-db-index/): A practical introduction to database indexing.
+- [Avoid Costly Rails Logging](https://jake.town/blog/costly-logging/): When Rails logging becomes a performance bottleneck.
+- [300 Days in: Engineering at CallRail](https://jake.town/blog/300-days-at-callrail/): Reflections on the first year at a call tracking startup.
+
+## Experience
+
+- **CallRail** (current) — Building AI Voice Assist: Twilio voice streams + OpenAI Realtime API via WebSockets. Previously owned call routing for hundreds of thousands of daily calls.
+- **Grayscale Labs** — Earlier career work.
+
+## Links
+
+- [Resume](https://jake.town/resume)
+- [GitHub](https://github.com/jakswa)
+- [LinkedIn](https://linkedin.com/in/jakswa)
