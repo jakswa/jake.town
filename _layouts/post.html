@@ -2,6 +2,10 @@
 layout: default
 ---
 <style>
+  /* Narrow body for blog posts so article, comments, and footer
+     all share one column width. */
+  body { max-width: 820px; }
+
   /* POST META */
   .post-meta {
     font-family: var(--mono); font-size: 10px; letter-spacing: 0.22em;
@@ -19,13 +23,13 @@ layout: default
   h1.title em { font-style: italic; color: var(--glow); }
   .lede {
     font-family: var(--serif); font-style: italic; font-size: 19px;
-    color: #cfc6b3; line-height: 1.45; margin-bottom: 32px; max-width: 720px;
+    color: #cfc6b3; line-height: 1.45; margin-bottom: 32px;
   }
 
   /* ARTICLE BODY */
   article {
     font-family: var(--serif); font-size: 17px; line-height: 1.65;
-    color: var(--paper-warm); max-width: 720px;
+    color: var(--paper-warm);
   }
   article p { margin-bottom: 14px; }
   article ul, article ol { margin: 0 0 14px 1.25em; }
