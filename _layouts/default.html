@@ -71,6 +71,9 @@
     .winbar .y { background: #febc2e; }
     .winbar .g { background: #28c840; }
     .winbar .title { margin-left: 14px; font-size: 11px; letter-spacing: 0.18em; color: var(--ink-mute); }
+    .winbar .title a { color: var(--green); text-decoration: none; }
+    .winbar .title a:hover { color: var(--glow); text-decoration: underline; }
+    .winbar .title .here { color: var(--paper); }
     .winbar .meta { margin-left: auto; font-size: 11px; color: var(--ink-mute); }
 
     .prompt { color: var(--green); }
@@ -96,7 +99,7 @@
 <body>
   <div class="winbar" role="presentation">
     <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-    <span class="title">jakswa@jake.town ~ {{ page.url | default: '/' }} ─ zellij 0</span>
+    <span class="title">jakswa@jake.town <a href="/">~</a>{% assign parts = page.url | split: "/" %}{% for part in parts %}{% if part != "" %} / {% if forloop.last %}<span class="here">{{ part }}</span>{% else %}<a href="/{{ part }}/">{{ part }}</a>{% endif %}{% endif %}{% endfor %} ─ zellij 0</span>
     <span class="meta">{% if page.date %}{{ page.date | date: "%Y-%m-%d" }}{% else %}live{% endif %}</span>
   </div>
 

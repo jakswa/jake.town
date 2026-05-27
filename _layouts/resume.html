@@ -61,6 +61,9 @@
     .winbar .y { background: #febc2e; }
     .winbar .g { background: #28c840; }
     .winbar .title { margin-left: 14px; font-size: 11px; letter-spacing: 0.18em; color: var(--ink-mute); }
+    .winbar .title a { color: var(--green); text-decoration: none; }
+    .winbar .title a:hover { color: var(--glow); text-decoration: underline; }
+    .winbar .title .here { color: var(--paper); }
     .winbar .when { margin-left: auto; font-size: 11px; color: var(--ink-mute); }
 
     .prompt { color: var(--green); }
@@ -166,7 +169,7 @@
 <body>
   <div class="winbar" role="presentation">
     <span class="dot r"></span><span class="dot y"></span><span class="dot g"></span>
-    <span class="title">jakswa@callrail ~ /resume ─ zellij 0</span>
+    <span class="title">jakswa@callrail <a href="/">~</a> / <span class="here">resume</span> ─ zellij 0</span>
     <span class="when" id="winbar-when"></span>
   </div>
 
