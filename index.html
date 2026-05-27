@@ -75,10 +75,23 @@ description: Staff engineer. Backend systems, some frontend, lots of phone calls
 
   /* RECENT CALLS — incoming-call log style strip above the footer */
   .calls {
-    position: absolute; left: 48px; right: 48px; top: 540px;
+    position: absolute; left: 48px; right: 48px; top: 540px; bottom: 56px;
     border: 1px solid var(--bg-line); background: var(--bg-soft); border-radius: 3px;
     padding: 10px 14px 12px;
+    display: flex; flex-direction: column;
   }
+  .calls-tail {
+    margin-top: auto; padding-top: 14px; border-top: 1px dashed var(--bg-line);
+    font-family: var(--mono); font-size: 10px; letter-spacing: 0.18em;
+    color: var(--ink-mute); display: flex; justify-content: space-between; align-items: center;
+  }
+  .calls-tail .blink {
+    display: inline-block; width: 6px; height: 11px; background: var(--green);
+    vertical-align: -1px; margin-right: 8px;
+    animation: tail-blink 1.1s steps(2, end) infinite;
+  }
+  @keyframes tail-blink { 50% { opacity: 0; } }
+  @media (prefers-reduced-motion: reduce) { .calls-tail .blink { animation: none; opacity: 0.5; } }
   .calls-hdr {
     display: flex; justify-content: space-between; align-items: center;
     font-size: 10px; letter-spacing: 0.24em; color: var(--glow);
@@ -191,6 +204,10 @@ description: Staff engineer. Backend systems, some frontend, lots of phone calls
       <span class="arr">›</span>
     </a>
     {% endfor %}
+    <div class="calls-tail">
+      <span><span class="blink"></span>awaiting next call — listening on all lines</span>
+      <span>tail -f /var/log/jake.town</span>
+    </div>
   </section>
 
   <footer class="bot">
