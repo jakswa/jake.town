@@ -99,6 +99,7 @@
   <h2>Writing</h2>
   <ul class="r-posts">
     {% for post in site.posts %}
+    {% if forloop.index > 4 %}{% break %}{% endif %}
     <li><a href="{{ post.url }}">{{ post.title }}</a></li>
     {% endfor %}
   </ul>
