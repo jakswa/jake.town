@@ -1,13 +1,4 @@
----
----
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>📞</text></svg>">
-  <title>{% if page.title and page.title != site.title %}{{ page.title }} — {{ site.title }}{% else %}{{ site.title }}{% endif %}</title>
-  <style>
+<style>
     :root {
       --disp: 'Fraunces', Georgia, serif;
       --body: 'Spectral', Georgia, serif;
@@ -239,34 +230,3 @@
       a { color: #000; text-decoration: none; }
     }
 </style>
-  <meta property="og:type" content="{% if page.layout == 'post' %}article{% else %}website{% endif %}">
-  <meta property="og:title" content="{{ page.title | default: site.title }}">
-  <meta property="og:description" content="{{ page.description | default: site.description }}">
-  <meta property="og:url" content="{{ page.url | absolute_url }}">
-  <meta property="og:site_name" content="Jake Swanson">
-  {% if page.image %}<meta property="og:image" content="{{ page.image | absolute_url }}">{% endif %}
-  <meta name="twitter:card" content="{% if page.image %}summary_large_image{% else %}summary{% endif %}">
-  <meta name="twitter:title" content="{{ page.title | default: site.title }}">
-  <meta name="twitter:description" content="{{ page.description | default: site.description }}">
-  {% if page.image %}<meta name="twitter:image" content="{{ page.image | absolute_url }}">{% endif %}
-</head>
-<body>
-  <div class="shell">
-    {% unless page.home %}
-    <header class="site-head">
-      <a class="brand" href="/">{{ page.brand | default: "Jake Swanson" }}</a>
-      <nav class="nav">
-        <a href="/blog/">writing</a>
-        <a href="/resume/">résumé</a>
-      </nav>
-    </header>
-    {% endunless %}
-    <main>
-      {{ content }}
-    </main>
-    <footer class="site-foot">
-      <span>jake.town · Atlanta, GA</span>
-    </footer>
-  </div>
-</body>
-</html>

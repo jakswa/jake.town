@@ -1,0 +1,18 @@
+---
+layout: default
+---
+<div class="index-head">
+  <h1 class="index-title">Writing</h1>
+  <a class="rss" href="/feed.xml">RSS</a>
+</div>
+<ol class="posts">
+  {% for post in site.posts %}
+  <li>
+    <a href="{{ post.url }}">
+      <span class="date">{{ post.date | date: "%Y-%m-%d" }}</span>
+      <span class="t">{{ post.title }}</span>
+      <span class="d">{{ post.description }}</span>
+    </a>
+  </li>
+  {% endfor %}
+</ol>

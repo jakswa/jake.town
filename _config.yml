@@ -6,8 +6,13 @@ url: https://jake.town
 markdown: kramdown
 permalink: /blog/:slug/
 
+plugins:
+  - jekyll-feed
+
 # Exclude from build
 exclude:
   - README.md
   - Gemfile
   - Gemfile.lock
+  - REDO_PLAN.md
+  - docs

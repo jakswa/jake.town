@@ -9,7 +9,7 @@ Jake is a staff-level software engineer based in Atlanta, GA. Career focus on ba
 ## Projects
 
 - [marta.io](https://marta.io): Real-time MARTA transit tracker. Maintained for 10+ years. Atlanta's public transit data, decoded and served.
-- [kincall.app](https://kincall.app): AI that calls your family and shares summaries. Built with Bun, Elysia, Twilio, OpenAI.
+- [inkcap.click](https://inkcap.click): Server-driven LLM chat app where the server owns durable conversation runs. Built with Bun, Hono, PostgreSQL, SSR, SSE, MCP tools, and provider integrations.
 - [home.jake.town](https://home.jake.town): Personal home server. Hosts experiments, tools, and an AI familiar named Clatis.
 - [Pullcord](https://pullcord.home.jake.town): Real-time MARTA bus tracker. Mobile-first, GTFS-RT, web push notifications. Open source at [codeberg.org/clatis/pullcord](https://codeberg.org/clatis/pullcord).
 

@@ -1,0 +1,110 @@
+<header class="r-head">
+  <h1 class="r-name">Jake Swanson</h1>
+  <p class="r-tag">Staff Engineer · backend systems, some frontend, lots of phone calls.</p>
+  <p class="r-contact">
+    Atlanta, GA ·
+    <a href="tel:+16787199096">(678) 719-9096</a> ·
+    <a href="mailto:jakswa@gmail.com">jakswa@gmail.com</a> ·
+    <a href="https://linkedin.com/in/jakswa">linkedin.com/in/jakswa</a> ·
+    <a href="https://github.com/jakswa">github.com/jakswa</a>
+  </p>
+</header>
+
+<section class="r-sec">
+  <h2>Experience</h2>
+  <article class="job">
+    <div class="job-line">
+      <h3>Staff Engineer, CallRail</h3>
+      <span class="when">Dec 2024 → Present · Atlanta, GA</span>
+    </div>
+    <div class="stack">Node.js, TypeScript, WebSockets, OpenAI Realtime, Twilio, Rails</div>
+    <ul>
+      <li>Building AI Voice Assist: bridging Twilio voice streams with OpenAI's Realtime API over WebSockets — sub-second audio, barge-in handling, in production.</li>
+      <li>A decade of telephony concurrency translates directly to real-time voice failure modes. The institutional knowledge lets me debug a seven-year-old race condition the same afternoon I ship a new feature on top of it.</li>
+      <li>Operating as architect / reviewer / integrator — directing AI coding agents on implementation, owning the parts that have to be right.</li>
+    </ul>
+  </article>
+  <!-- TODO: Hummingbird "founding engineer (loaned)" block — uncomment and finalize copy when you want it public.
+  <article class="job">
+    <div class="job-line">
+      <h3>Founding Engineer (loaned), CallRail-backed B2B SaaS venture</h3>
+      <span class="when">Apr 2026 → Present · Atlanta, GA</span>
+    </div>
+    <ul>
+      <li>Founding engineer on a 4-person team building a new B2B SaaS product inside a 200-person org.</li>
+      <li>Still a CallRail employee; loaned to the venture to set the technical foundation.</li>
+      <li>Same operating mode: direct AI agents on the build, own architecture and the parts that have to be right.</li>
+    </ul>
+  </article>
+  -->
+  <article class="job">
+    <div class="job-line">
+      <h3>Staff Engineer, Grayscale Labs</h3>
+      <span class="when">Oct 2022 → Dec 2024 · Atlanta, GA</span>
+    </div>
+    <div class="stack">Ruby on Rails, PostgreSQL, React, SMS pipelines</div>
+    <ul>
+      <li>High-throughput SMS automation for recruiting — the kind of system where one bad query stalls a queue feeding live candidate conversations.</li>
+      <li>Owned the messaging pipeline through several traffic regime changes.</li>
+    </ul>
+  </article>
+  <article class="job">
+    <div class="job-line">
+      <h3>Staff Engineer, CallRail</h3>
+      <span class="when">Oct 2014 → Aug 2022 · Atlanta, GA</span>
+    </div>
+    <div class="stack">Ruby on Rails, PostgreSQL, Redis, Sidekiq, AngularJS</div>
+    <ul>
+      <li>Owned the code routing hundreds of thousands of daily phone calls, including the race conditions and concurrency bugs that come with it.</li>
+      <li>Rewrote the 2,000-line ERB + JavaScript tracking library distributed to customers, converting it to pure JavaScript with a comprehensive test suite.</li>
+      <li>Leveraged the new test suite to remove jQuery from the tracking library, dramatically reducing bundle size.</li>
+      <li>Progressed from full-stack AngularJS + Rails work to backend-focused systems development.</li>
+    </ul>
+  </article>
+</section>
+
+<section class="r-sec">
+  <h2>Stacks</h2>
+  <dl class="stacks">
+    <dt>voice_realtime</dt>
+    <dd>Twilio Media Streams, OpenAI Realtime API, WebSockets, sub-second audio pipelines, telephony concurrency</dd>
+    <dt>ai_workflow</dt>
+    <dd>Claude Code, Cursor, agent orchestration, AI-augmented review and architecture</dd>
+    <dt>languages</dt>
+    <dd>Ruby, JavaScript / TypeScript, SQL, HTML / CSS</dd>
+    <dt>frameworks</dt>
+    <dd>Rails, Node.js, React</dd>
+    <dt>infrastructure</dt>
+    <dd>PostgreSQL, Redis, Sidekiq, Twilio</dd>
+  </dl>
+</section>
+
+<section class="r-sec">
+  <h2>Projects</h2>
+  <div class="proj">
+    <a class="name" href="https://inkcap.click">inkcap.click</a>
+    <p>Server-driven LLM chat app where the server owns durable conversation runs. Bun, Hono, PostgreSQL, SSR, SSE, MCP tools, and provider integrations.</p>
+  </div>
+  <div class="proj">
+    <a class="name" href="https://marta.io">marta.io</a>
+    <p>Real-time Atlanta train arrival dashboard built in Rust. Maintained for 10+ years.</p>
+  </div>
+  <div class="proj">
+    <a class="name" href="https://home.jake.town">home.jake.town</a>
+    <p>Personal home server. Hosts experiments, tools, and an AI familiar named Clatis.</p>
+  </div>
+</section>
+
+<section class="r-sec">
+  <h2>Writing</h2>
+  <ul class="r-posts">
+    {% for post in site.posts %}
+    <li><a href="{{ post.url }}">{{ post.title }}</a></li>
+    {% endfor %}
+  </ul>
+</section>
+
+<section class="r-sec">
+  <h2>Education</h2>
+  <p class="edu">Georgia Southern University — B.S. in Computer Science, 2009 – 2011</p>
+</section>
